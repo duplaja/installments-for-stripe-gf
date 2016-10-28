@@ -38,7 +38,7 @@ Features
 
 == Frequently Asked Questions ==
 
-= What do I need for this plugin ro run? =
+= What do I need for this plugin to run? =
 
 You need the Gravity Forms plugin as well as the official Gravity Forms Stripe plugin.
 

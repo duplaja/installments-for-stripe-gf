@@ -16,7 +16,7 @@ Installments for Gravity Forms and Stripe enables you to set up subscription pay
 
 Installments for Gravity Forms and Stripe allows you to set up installment payments or limited length subscription payments. Stripe itself does not have the option to auto-cancel, so we will do this through the plugin here.
 
-To do this, set up your Stripe feed like normal in Gravity Forms. Once your feed is created, you can optionally set a number of payments after which the subscription will be auto-canceled on the Installments settings page. To remove the auto-cancel condition from a Stripe feed, simply set the number of times to charge to 0 and then save your changes.
+To do this, set up your Stripe subscription feed like normal in Gravity Forms. Once your feed is created, you can optionally set a number of payments after which the subscription will be auto-canceled on the Installments settings page. To remove the auto-cancel condition from a Stripe feed, simply set the number of times to charge to 0 and then save your changes.
 
 Use Cases
 

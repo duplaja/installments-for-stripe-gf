@@ -24,16 +24,16 @@ function installments_stripe_gf_activate() {
 
 register_activation_hook(__FILE__, 'installments_stripe_gf_activate');
 
-
-//adds link to stripe submenu on admin dash
-add_filter( 'gform_addon_navigation', 'gfstripe_installments_add_menu_item' );
-
-function gfstripe_installments_add_menu_item( $menu_items ) {
-
-    $menu_items[] = array( "name" => "stripe_installments", "label" => "Installments (Stripe)", "callback" => "stripe_installments_display_settings", "permission" => "edit_posts" );
-    return $menu_items;
-
+//adds tab on GF Settings page
+add_filter( 'gform_settings_menu', 'add_stripe_installments_settings_tab' );
+function add_stripe_installments_settings_tab( $tabs ) {
+    $tabs[] = array( 'name' => 'stripe_installments', 'label' => 'Stripe Installments' );
+    return $tabs;
 }
+
+//adds content to gform settings
+add_action( 'gform_settings_stripe_installments', 'stripe_installments_display_settings', 10, 1 );
+
 
 //on-load, sets up the following settings for the plugin
 add_action( 'admin_init', 'gfstripe_installment_settings' );

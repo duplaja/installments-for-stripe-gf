@@ -25,14 +25,14 @@ function installments_stripe_gf_activate() {
 register_activation_hook(__FILE__, 'installments_stripe_gf_activate');
 
 //adds tab on GF Settings page
-add_filter( 'gform_settings_menu', 'add_stripe_installments_settings_tab' );
-function add_stripe_installments_settings_tab( $tabs ) {
+add_filter( 'gform_settings_menu', 'installments_stripe_gf_settings_tab' );
+function installments_stripe_gf_settings_tab( $tabs ) {
     $tabs[] = array( 'name' => 'stripe_installments', 'label' => 'Stripe Installments' );
     return $tabs;
 }
 
 //adds content to gform settings
-add_action( 'gform_settings_stripe_installments', 'stripe_installments_display_settings', 10, 1 );
+add_action( 'gform_settings_stripe_installments', 'installments_stripe_gf_display_settings', 10, 1 );
 
 
 //on-load, sets up the following settings for the plugin
@@ -45,7 +45,7 @@ function gfstripe_installment_settings() {
 
 //Returns all active stripe subscription feedNames as an array.
 //returns No Feeds Found if none exist.
-function active_stripe_feedNames_list(){
+function installments_stripe_gf_feedNames_list(){
 
 		GLOBAL $wpdb;
 		$sql = $wpdb->prepare( "SELECT meta FROM {$wpdb->prefix}gf_addon_feed WHERE addon_slug='gravityformsstripe' AND is_active='1'",'foo');
@@ -76,7 +76,7 @@ function active_stripe_feedNames_list(){
 }
 
 //returns a select dropdown with the name (array), list of names, and the default option
-function return_select_feedNames($select_name, $valid_feedNames_array, $preset_feedName){
+function installments_stripe_gf_return_select_feedNames($select_name, $valid_feedNames_array, $preset_feedName){
 	
 
 	$select_feedNames = '<select name="'.$select_name.'[]"><option value=""></option>';
@@ -101,11 +101,11 @@ function return_select_feedNames($select_name, $valid_feedNames_array, $preset_f
 }
 
 //displays the settings page
-function stripe_installments_display_settings() {
+function installments_stripe_gf_display_settings() {
 
-	$valid_feedNames_array = active_stripe_feedNames_list();
+	$valid_feedNames_array = installments_stripe_gf_feedNames_list();
 	
-	$no_default_select = return_select_feedNames('gfstripe_installment_feeds', $valid_feedNames_array,'none');
+	$no_default_select = installments_stripe_gf_return_select_feedNames('gfstripe_installment_feeds', $valid_feedNames_array,'none');
 	
 
 	//form to save feed names and number of iterations desired
@@ -182,7 +182,7 @@ function stripe_installments_display_settings() {
 			echo " 
      		<tr valign=\"top\">
      		<th scope=\"row\">Sub Feed Name</th>
-        		<td>".return_select_feedNames('gfstripe_installment_feeds', $valid_feedNames_array, $gfstripe_installment_feeds[$i])."</td><td>Times to Charge: <input name=\"gfstripe_installment_num_total[]\" type=\"number\" min=\"0\" value=\"$gfstripe_installment_num_total[$i]\">
+        		<td>".installments_stripe_gf_return_select_feedNames('gfstripe_installment_feeds', $valid_feedNames_array, $gfstripe_installment_feeds[$i])."</td><td>Times to Charge: <input name=\"gfstripe_installment_num_total[]\" type=\"number\" min=\"0\" value=\"$gfstripe_installment_num_total[$i]\">
 
 			</td>
 			<td>";

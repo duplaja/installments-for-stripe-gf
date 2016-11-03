@@ -30,6 +30,10 @@ Features
 * Sends an e-mail to the admin account detailing the feed name and the entry number of the customer once the total amount is payed and the account is cancelled.
 * Can be deactivated safely without affecting existing feeds (they just will not auto-cancel anymore).
 
+To see other plugins like this, or tips on how these are built, check out [WP Tech Guides](https://www.wptechguides.com/).
+
+Thanks to Mike @ [WP Bullet Guides](https://guides.wp-bullet.com/) for the banner and icon.
+
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/installments-for-stripe-gf` directory, or install the plugin through the WordPress plugins screen directly.

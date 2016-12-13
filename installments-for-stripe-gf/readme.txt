@@ -3,7 +3,7 @@ Contributors: duplaja
 Donate link: https://www.wptechguides.com/donate/
 Tags: Gravity Forms, GF, Stripe, installments, layaway, subscriptions
 Requires at least: 4.0.1
-Tested up to: 4.6.1
+Tested up to: 4.7.0
 Stable tag: trunk
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -59,7 +59,8 @@ Just change the times to charge to 0, and then save the existing settings.
 Depends on Gravity Forms, Gravity Forms Stripe Plugin, and Stripe payment systems
 
 == Changelog ==
-
+= 1.1 =
+* Tested and updated supported version to 4.7
 = 1.0 =
 * Initial Plugin Release
 

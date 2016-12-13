@@ -3,7 +3,7 @@
 * Plugin Name: Installments for Stripe Gravity Forms
 * Plugin URI: https://www.wptechguides.com
 * Description: A plugin for Gravity Forms and Stripe Integration (official) to allow installment payments
-* Version: 1.0
+* Version: 1.1
 * Author: duplaja (Dan D.)
 * Author URI: https://www.convexcode.com
 **/
